@@ -2,7 +2,7 @@ import React from "react";
 import { nanoid } from 'nanoid'
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import { filterAction } from "redux/filter/filter.actions";
+import { filterAction } from "redux/filter/filter.slice";
 
 const StyledFilter = styled.div`
     display: flex;

@@ -1,5 +1,7 @@
-import { createAction } from "@reduxjs/toolkit";
+// NOT NEEDED WITH SLICE:
 
-export const contactsGetAction = createAction('GETCONTACT');
-export const contactsAddAction = createAction('ADDCONTACT');
-export const contactsDeleteAction = createAction('DELETECONTACT');
+// import { createAction } from "@reduxjs/toolkit";
+
+// export const contactsGetAction = createAction('GETCONTACT');
+// export const contactsAddAction = createAction('ADDCONTACT');
+// export const contactsDeleteAction = createAction('DELETECONTACT');

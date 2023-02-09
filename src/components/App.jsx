@@ -6,7 +6,7 @@ import { Filter } from "./Filter/Filter";
 import styled from "styled-components";
 
 import { useSelector, useDispatch } from "react-redux";
-import { contactsGetAction } from "redux/contacts/contacts.actions";
+import { contactsGetAction } from "redux/contacts/contacts.slice";
 
 
 const Wrapper = styled.div`

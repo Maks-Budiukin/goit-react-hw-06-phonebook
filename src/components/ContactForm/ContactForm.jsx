@@ -3,7 +3,7 @@ import { useState } from "react";
 import { nanoid } from 'nanoid'
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import { contactsAddAction } from "redux/contacts/contacts.actions";
+import { contactsAddAction } from "redux/contacts/contacts.slice";
 
 const StyledForm = styled.form`
 display: flex;

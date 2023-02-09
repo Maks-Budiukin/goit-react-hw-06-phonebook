@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
-import { contactsDeleteAction } from "redux/contacts/contacts.actions";
+import { contactsDeleteAction } from "redux/contacts/contacts.slice";
 
 const StyledList = styled.ul`
   list-style: none;
@@ -42,7 +42,7 @@ export function ContactList() {
   const filter = useSelector(state => state.filter);
   const contacts = useSelector(state => state.contacts)
   const dispatch = useDispatch();
-    const normalizedFilter = filter.toLowerCase();
+    const normalizedFilter = filter.toLowerCase().trim();
     
     const deleteHandler = (contactID) => {
     dispatch(contactsDeleteAction(contactID))

@@ -1,8 +1,11 @@
-import { createAction } from "@reduxjs/toolkit"
+// =============== NOT NEEDED WITH SLICE:
 
 
-// ================= VANILLA REDUX:
+// import { createAction } from "@reduxjs/toolkit"
 
-// export const filterAction = payload => ({ type: FILTER, payload })
 
-export const filterAction = createAction('FILTER');
+// // ================= VANILLA REDUX:
+
+// // export const filterAction = payload => ({ type: FILTER, payload })
+
+// export const filterAction = createAction('FILTER');
