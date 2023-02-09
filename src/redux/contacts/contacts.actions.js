@@ -1,7 +1,5 @@
-import { ADDCONTACT, DELETECONTACT, GETCONTACT } from "./contacts.types";
+import { createAction } from "@reduxjs/toolkit";
 
-export const contactsGetAction = payload => ({ type: GETCONTACT, payload })
-
-export const contactsAddAction = payload => ({ type: ADDCONTACT, payload })
-
-export const contactsDeleteAction = payload => ({type: DELETECONTACT, payload})
+export const contactsGetAction = createAction('GETCONTACT');
+export const contactsAddAction = createAction('ADDCONTACT');
+export const contactsDeleteAction = createAction('DELETECONTACT');
