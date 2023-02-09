@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
+import { contactsDeleteAction } from "redux/contacts/contacts.actions";
 
 const StyledList = styled.ul`
   list-style: none;
@@ -44,7 +45,7 @@ export function ContactList() {
     const normalizedFilter = filter.toLowerCase();
     
     const deleteHandler = (contactID) => {
-    dispatch({type: 'DELETECONTACT', payload: contactID})
+    dispatch(contactsDeleteAction(contactID))
   }
     
     const filteredContacts = contacts.filter(contact => contact.name.toLowerCase().includes(normalizedFilter));

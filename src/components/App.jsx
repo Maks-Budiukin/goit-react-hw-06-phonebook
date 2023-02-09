@@ -6,6 +6,7 @@ import { Filter } from "./Filter/Filter";
 import styled from "styled-components";
 
 import { useSelector, useDispatch } from "react-redux";
+import { contactsGetAction } from "redux/contacts/contacts.actions";
 
 
 const Wrapper = styled.div`
@@ -32,7 +33,7 @@ export const App = () => {
   useEffect(() => {
     const people = JSON.parse(localStorage.getItem("contacts")) ;
     if (isFirstRender.current && people) {
-      dispatch({type: 'GETCONTACT', payload: people })
+      dispatch(contactsGetAction(people))
       isFirstRender.current = false;
     }
   }, [dispatch]);

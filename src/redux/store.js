@@ -1,18 +1,21 @@
-import { createStore } from "redux";
-
-const reducer = (state = "", action) => {
-
-    switch (action.type) {
-        case 'FILTER': return { ...state, filter: "" + action.payload  };
-        case 'GETCONTACT': return { ...state, contacts: [...action.payload] };
-        case 'ADDCONTACT': return { ...state, contacts: [...state.contacts, action.payload] };
-        case 'DELETECONTACT': return {...state, contacts: state.contacts.filter(contact => contact.id !== action.payload)}
-        default: return state;
-    }
-    
-};
+import { createStore, combineReducers } from "redux";
+import { contactsInitState } from "./contacts/contacts.init-state";
+import { contactsReducer } from "./contacts/contacts.reducer";
+import { filterInitState } from "./filter/filter.init-state";
+import { filterReducer } from "./filter/filter.reducer";
 
 
-export const store = createStore(reducer, { filter: "", contacts: [] });
+const initState = {
+    filter: filterInitState,
+    contacts: contactsInitState,
+}
+
+const rootReducer = combineReducers({
+    filter: filterReducer,
+    contacts: contactsReducer,
+})
+
+
+export const store = createStore(rootReducer, initState);
 
 

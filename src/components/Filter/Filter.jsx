@@ -2,6 +2,7 @@ import React from "react";
 import { nanoid } from 'nanoid'
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
+import { filterAction } from "redux/filter/filter.actions";
 
 const StyledFilter = styled.div`
     display: flex;
@@ -31,7 +32,7 @@ export function Filter() {
     const dispatch = useDispatch();
 
     const onInputChange = (event) => {
-    dispatch({type: 'FILTER', payload: event.target.value })
+    dispatch(filterAction(event.target.value))
     }
 
     return (

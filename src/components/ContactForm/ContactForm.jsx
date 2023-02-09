@@ -3,6 +3,7 @@ import { useState } from "react";
 import { nanoid } from 'nanoid'
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
+import { contactsAddAction } from "redux/contacts/contacts.actions";
 
 const StyledForm = styled.form`
 display: flex;
@@ -68,7 +69,7 @@ export const ContactForm = () => {
     const normalizedName = name.toLowerCase();
     contacts.find(contact => contact.name.toLowerCase() === normalizedName) 
     ? alert(`${name} is already in contacts `) 
-    : dispatch({type: 'ADDCONTACT', payload: { id: nanoid(), name: name, number: number } })
+    : dispatch(contactsAddAction({ id: nanoid(), name: name, number: number }))
 
     setName("");
     setNumber("");
