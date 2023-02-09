@@ -1,1 +1,1 @@
-export const contactsInitState = [];
+export const contactsInitState = [{id: "123", name: "Alex", number: "123-12-13"}, {id: '234', name: 'Mike', number: '123-12-13'}];

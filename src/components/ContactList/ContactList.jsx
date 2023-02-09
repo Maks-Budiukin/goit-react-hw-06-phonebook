@@ -41,6 +41,7 @@ const StyledList = styled.ul`
 export function ContactList() {
   const filter = useSelector(state => state.filter);
   const contacts = useSelector(state => state.contacts)
+  
   const dispatch = useDispatch();
     const normalizedFilter = filter.toLowerCase().trim();
     
